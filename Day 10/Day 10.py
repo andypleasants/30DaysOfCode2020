@@ -98,14 +98,14 @@ input = """118
 86"""
 
 split_input = map(lambda adapter: int(adapter), input.splitlines())
-sorted_adapters = list(sorted(split_input))
+sorted_adapters = sorted(split_input)
 
 one_difference = 0
 #Start this at 1 because the jolt difference between 
 #the adapter and device is always 3
 three_difference = 1 
 start_joltage = 0
-for index, adapter in enumerate(sorted_adapters):
+for adapter in sorted_adapters:
     difference = adapter - start_joltage
     if difference == 1:
         one_difference += 1
